@@ -30,10 +30,20 @@ const timetable = [{
     course: "1",
     groups: [{
         name: "Group121",
-        timetable: [{
-            time: "8:30/9:50",
-            subject: "Math121"
-        }]
+        timetable: [
+            {
+                time: "8:30/9:50",
+                subject: "Math121"
+            },
+            {
+                time: "13:30/14:50",
+                subject: "History121"
+            },
+            {
+                time: "15:30/19:50",
+                subject: "Physics121"
+            }
+        ]
     },
         {
             name: "Group122",
@@ -71,11 +81,11 @@ const weatherApiAPPID = '0bcd51d21bed1ac0981c463585602e75';
 app.get('/weather/:city/current', (req, res) => {
     const weatherQuery = weatherApiUrl + '?q=' + req.params.city + '&APPID=' + weatherApiAPPID;
     fetch(weatherQuery)
-        .then(function(response) {
+        .then(function (response) {
             return response.json();
-        }).then(function(json) {
-            res.json(json);
-        });
+        }).then(function (json) {
+        res.json(json);
+    });
 
 });
 
@@ -122,14 +132,14 @@ app.get('/timetable-groups/:course/', (req, res) => {
 
 });
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 // "APPID": "0bcd51d21bed1ac0981c463585602e75"
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
