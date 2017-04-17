@@ -14,5 +14,8 @@
     "babel-preset-env": "^1.2.2",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "pushstate-server": "^3.0.0"
   }
 }

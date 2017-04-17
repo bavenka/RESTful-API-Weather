@@ -13,7 +13,8 @@ module.exports = {
     devServer: {
         inline: true,
         contentBase: './dist',
-        port: 8081
+        port: 8081,
+        historyApiFallback: true
     },
     module: {
         rules: [

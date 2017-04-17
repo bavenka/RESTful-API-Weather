@@ -12,7 +12,29 @@ function chooseGroup() {
     group = groupEl.options[groupEl.selectedIndex].text;
 }
 
+function getCourse() {
+    var courseEl = document.getElementById('course');
+    return courseEl.options[courseEl.selectedIndex].text;
+}
+function getGroup() {
+    var groupEl = document.getElementById('group');
+    return groupEl.options[groupEl.selectedIndex].text;
+}
+
+
+function pushUrl() {
+    var url = '/timetable/' + course + '/' + group + '/';
+    if (history.state === null) {
+        history.pushState(null, null, url);
+    }else {
+        history.replaceState(null,null, url);
+    }
+
+}
+
+
 function showTimetable() {
+    pushUrl();
     var url = "http://localhost:3000/timetable/" + course + "/" + group;
     fetch(url)
         .then(function (res) {
@@ -64,8 +86,6 @@ function renderWeather(json) {
 }
 
 function showG() {
-
-
     $.ajax({
         url: "http://localhost:3000/timetable-groups/" + $('#course').val() + "/",
         context: document.body,
