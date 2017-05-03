@@ -47,9 +47,9 @@ function showTimetable() {
 function renderTable(json) {
     $('#table').empty();
     var $table = $('<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp"/>');
-    $table.append('<tr><th>Group</th><th>Subject</th><th>Time</th></tr>');
+    $table.append('<tr><th>Group</th><th>Subject</th><th>Start Time</th><th>Finish Time</th></tr>');
     json.timetable.map((day, i) => {
-        $table.append('<tr><td>' + json.name + '</td><td>' + day.subject + '</td><td>' + day.time + '</td></tr>');
+        $table.append('<tr><td>' + json.name + '</td><td>' + day.subject + '</td><td>' + day.timeStart + '</td><td>' + day.timeFinish + '</td></tr>');
     });
     $('#table').append($table);
     getWeather();
