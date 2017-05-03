@@ -32,15 +32,18 @@ const timetable = [{
         name: "Group121",
         timetable: [
             {
-                time: "8:30/9:50",
+                timeStart: "8:30",
+                timeFinish:"9:50",
                 subject: "Math121"
             },
             {
-                time: "13:30/14:50",
+                timeStart:"13:30",
+                timeFinish:"14:50",
                 subject: "History121"
             },
             {
-                time: "15:30/19:50",
+                timeStart:"15:30",
+                timeFinish:"19:50",
                 subject: "Physics121"
             }
         ]
@@ -48,7 +51,8 @@ const timetable = [{
         {
             name: "Group122",
             timetable: [{
-                time: "10:05/11:25",
+                timeStart:"8:30",
+                timeFinish:"9:50",
                 subject: "Math122"
             }]
         }
@@ -56,17 +60,19 @@ const timetable = [{
 },
     {
         course: "2",
-        groups: [{
+        groups: [ {
             name: "Group221",
             timetable: [{
-                time: "8:30/9:50",
+                timeStart:"8:30",
+                timeFinish:"9:50",
                 subject: "Math221"
             }]
         },
             {
                 name: "Group222",
                 timetable: [{
-                    time: "8:30/9:50",
+                    timeStart:"8:30",
+                    timeFinish:"9:50",
                     subject: "Math222"
                 }]
             }
