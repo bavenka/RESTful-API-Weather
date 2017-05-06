@@ -38,7 +38,7 @@ const timetable = [{
             },
             {
                 timeStart:"13:30",
-                timeFinish:"14:50",
+                timeFinish:"15:50",
                 subject: "History121"
             },
             {
